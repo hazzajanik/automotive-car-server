@@ -34,11 +34,18 @@ async function run() {
     const carCollection = client.db('carDB').collection('car');
     const cartCollection = client.db('carDB').collection('cart');
 
+    // app.get('/car',async(req,res)=>{
+    //     const cursor = carCollection.find();
+    //     const result = await cursor.toArray();
+    //     res.send(result);
+    // })
+
+
     app.get('/car',async(req,res)=>{
-        const cursor = carCollection.find();
-        const result = await cursor.toArray();
-        res.send(result);
-    })
+      const cursor = carCollection.find();
+      const result = await cursor.toArray();
+      res.send(result);
+  })
 
     app.get('/cart',async(req,res)=>{
       const cursor = cartCollection.find();
